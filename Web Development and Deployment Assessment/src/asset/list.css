@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+}
+
+body{
+    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background-size: 40px 40px;
+    background-image:
+    linear-gradient(to right, rgb(248, 244, 244) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(248, 244, 244) 1px, transparent 1px);
+    background-attachment: fixed;
+}
+
+#menu-container > ul{
+    list-style-type: none;
+    display: flex;
+    gap: 35px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#menu-container{
+    display: flex;
+    gap: 45px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+#wireframe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 100px;
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-weight: 500;
+}
+
+#rocket-container{
+    height: fit-content;
+    width: fit-content;
+}
+
+#skill-logo{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    display: none;
+}

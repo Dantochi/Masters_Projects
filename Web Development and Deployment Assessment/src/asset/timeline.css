@@ -1,0 +1,305 @@
+*{
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background-size: 40px 40px;
+    background-image:
+    linear-gradient(to right, rgb(248, 244, 244) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(248, 244, 244) 1px, transparent 1px);
+    background-attachment: fixed;
+}
+
+#timeline-section{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+}
+  
+#timeline-container{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    /* background-color: aquamarine; */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+}
+
+#timeline-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 49px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#timeline-header > h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#timeline-grid{
+    margin-top: 10px;
+    width: 900px;
+    height: fit-content;
+    /* background-color: blueviolet; */
+    display: grid;
+    grid-template-areas: 
+    ". . . line-1 line-2 line-3 line-4"
+    "line-7 line-6 line-5 line-1 . . ."
+    ". . . line-1 line-8 line-9 line-10"
+    "line-13 line-12 line-11 line-1 . . ."
+    ". . . line-1 line-14 line-15 line-16"
+    "line-19 line-18 line-17 line-1 . . . ";
+    grid-template-columns: 4fr 5px 3fr 1px 3fr 5px 4fr;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+}
+
+/* .container{
+    background-color: blue;
+} */
+
+#line-1{
+    grid-area: line-1;
+    background-color: #000000;
+}
+
+#line-2{
+    display: flex;
+    align-items: center;
+    grid-area: line-2;
+}
+
+#line-2 > div{
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#line-3{
+    display: flex;
+    align-items: center;
+    grid-area: line-3;
+    /* background-color: brown; */
+}
+
+#line-3 > div{
+    height: 5px;
+    width: 5px;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+#line-4{
+    display: flex;
+    align-items: center;
+    grid-area: line-4;
+    /* background-color: cadetblue; */
+}
+
+#line-4 > p{
+    width: 70%;
+    margin: 5px;
+}
+
+#line-5{
+    grid-area: line-5;
+    display: flex;
+    align-items: center;
+}
+
+#line-5 > div{
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#line-6{
+    display: flex;
+    align-items: center;
+    grid-area: line-6;
+    /* background-color: brown; */
+}
+
+#line-6 > div{
+    height: 5px;
+    width: 5px;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+#line-7{
+    display: flex;
+    align-items: center;
+    grid-area: line-7;
+    /* background-color: cadetblue; */
+    /* text-align: right; */
+    justify-content: flex-end;
+}
+
+#line-7 > p{
+    width: 70%;
+}
+
+#line-8{
+    grid-area: line-8;
+    display: flex;
+    align-items: center;
+}
+
+#line-8 > div{
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#line-9{
+    display: flex;
+    align-items: center;
+    grid-area: line-9;
+    /* background-color: brown; */
+}
+
+#line-9 > div{
+    height: 5px;
+    width: 5px;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+#line-10{
+    display: flex;
+    align-items: center;
+    grid-area: line-10;
+    margin: 5px;
+    /* background-color: cadetblue; */
+}
+
+#line-10 > p{
+    width: 70%;
+}
+
+#line-11{
+    grid-area: line-11;
+    display: flex;
+    align-items: center;
+}
+
+#line-11 > div{
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#line-12{
+    display: flex;
+    align-items: center;
+    grid-area: line-12;
+    /* background-color: brown; */
+}
+
+#line-12 > div{
+    height: 5px;
+    width: 5px;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+#line-13{
+    display: flex;
+    align-items: center;
+    grid-area: line-13;
+    /* background-color: cadetblue; */
+    justify-content: flex-end;
+}
+
+#line-13 > p{
+    width: 70%;
+}
+
+#line-14{
+    grid-area: line-14;
+    display: flex;
+    align-items: center;
+}
+
+#line-14 > div{
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#line-15{
+    display: flex;
+    align-items: center;
+    grid-area: line-15;
+    /* background-color: brown; */
+}
+
+#line-15 > div{
+    height: 5px;
+    width: 5px;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+#line-16{
+    display: flex;
+    align-items: center;
+    grid-area: line-16;
+    margin: 5px;
+    /* background-color: cadetblue; */
+}
+
+#line-16 > p{
+    width: 70%;
+}
+
+#line-17{
+    grid-area: line-17;
+    display: flex;
+    align-items: center;
+}
+
+#line-17 > div{
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#line-18{
+    display: flex;
+    align-items: center;
+    grid-area: line-18;
+    /* background-color: brown; */
+}
+
+#line-18 > div{
+    height: 5px;
+    width: 5px;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+#line-19{
+    display: flex;
+    align-items: center;
+    grid-area: line-19;
+    /* background-color: cadetblue; */
+    justify-content: flex-end;
+}
+
+#line-19 > p{
+    width: 70%;
+}
