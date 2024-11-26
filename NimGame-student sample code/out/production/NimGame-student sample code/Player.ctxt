@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=name
+comment1.target=Player(java.lang.String)
+comment2.params=name\ strategy
+comment2.target=Player(java.lang.String,\ MoveStrategy)
+comment3.params=currentPileSize
+comment3.target=int\ getMove(int)
+comment4.params=
+comment4.target=java.lang.String\ getName()
+comment5.params=
+comment5.target=MoveStrategy\ getStrategy()
+comment6.params=strategy
+comment6.target=void\ setStrategy(MoveStrategy)
+numComments=7

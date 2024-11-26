@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=NimGame
+comment1.params=humanPlayer\ computerPlayer
+comment1.target=NimGame(Player,\ Player)
+comment10.params=
+comment10.target=int\ getMarbleSize()
+comment11.params=
+comment11.target=boolean\ isHumanTurn()
+comment2.params=removeAmount
+comment2.target=void\ assignMove(int)
+comment3.params=
+comment3.target=boolean\ checkWinner()
+comment4.params=
+comment4.target=void\ saveGame()
+comment5.params=
+comment5.target=void\ loadGame()
+comment6.params=
+comment6.target=void\ undoLastMove()
+comment7.params=
+comment7.target=void\ resetGame()
+comment8.params=
+comment8.target=Player\ getHumanPlayer()
+comment9.params=
+comment9.target=Player\ getComputerPlayer()
+numComments=12

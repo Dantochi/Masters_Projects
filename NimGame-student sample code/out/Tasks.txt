@@ -1,0 +1,13 @@
+Current functionality include
+* Make a move
+* Strategies such as Random Strategy and Your Strategy
+* Quit game
+
+Missing functionalities include
+* Save game
+* Load saved game
+* Undo move
+* Clear game
+
+* Next task is to learn the file input output of Java from the Java for students textbook.
+* Implement code in assessment.
