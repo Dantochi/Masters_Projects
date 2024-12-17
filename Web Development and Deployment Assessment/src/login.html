@@ -42,15 +42,9 @@
     </header>
     <main style="height: 90vh;">
         <section style="display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
-            <form action="form.php" method="post">
+            <form action="./form.php" method="get">
                 <div>
-                    <h1 id="register_header">Create Account</h1>
-                </div>
-                <div class="input_container"><label for="username">Full Name</label>
-                    <input type="text" name="username" id="username" required>
-                </div>
-                <div class="input_container"><label for="DOB" required>DOB</label>
-                    <input type="date" name="DOB" id="DOB">
+                    <h1 id="register_header">Login</h1>
                 </div>
                 <div class="input_container"><label for="email" required>Email</label>
                     <input type="email" name="email" id="email">
@@ -58,11 +52,8 @@
                 <div class="input_container"><label for="password" required>Password</label>
                     <input type="password" name="password" id="password">
                 </div>
-                <div class="input_container"><label for="confirm_password" required>Confirm Password</label>
-                    <input type="password" name="confirm_password" id="confirm_password">
-                </div>
                 <div class="input_container">
-                    <input type="submit" name="submit" id="submit">
+                    <input type="submit" name="Login" id="login" value="Login">
                 </div>
             </form>
         </section>

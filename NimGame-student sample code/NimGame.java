@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class NimGame {
@@ -11,9 +12,9 @@ public class NimGame {
         this.marbleSize = random.nextInt(5, 21); // Used the random class to generate a random number between the origin = 5 and 21 = bound which is exclusive which means it generates numbers between 5 and 20. The method 'nextint()' returns an integer;
         // Whenever an instance of nim game is made, a random number of marbles is generated
         // Found out from the java Random class written file that you can generate a random either with no specification, or a bound provided (being exclusive) or a bound and origin provided (the bound also being exclusive)
-        this.humanPlayer = humanPlayer;
-        this.computerPlayer = computerPlayer;
-        this.isHumanTurn = random.nextBoolean();
+        this.humanPlayer = humanPlayer; // Here the name and strategy is created if the both as passed in when the Nim Game class is made. Player has two constructors
+        this.computerPlayer = computerPlayer; // Same thing here
+        this.isHumanTurn = random.nextBoolean(); // This
     }
 
     public void assignMove(int removeAmount) {
@@ -34,7 +35,8 @@ public class NimGame {
         System.out.println("Code not yet implemented \n");
     }
 
-    public void undoLastMove() {
+    public void undoLastMove(ArrayList<Integer> moves) {
+        // I first give a condition to ensure there is something still in the array
         System.out.println("Code not yet implemented \n");
     }
 
