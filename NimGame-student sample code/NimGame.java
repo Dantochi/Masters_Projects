@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,17 +29,45 @@ public class NimGame {
         return marbleSize <= 0;
     }
 
-    public void saveGame() {
+    public void saveGame(int marbles, boolean humanTurn, MoveStrategy humanStrategy, MoveStrategy computerStrategy) {
+        try{
+            FileWriter gameWriter = new FileWriter("GameHistory.txt", true);
+            gameWriter.write("Marble Size: " + marbles + "\n" +
+                    "Human Turn: " + humanTurn + "\n" +
+                    "Human Strategy: " + humanStrategy + "\n" +
+                    "Computer Strategy: " + computerStrategy + "\n\n");
+            gameWriter.close();
+        } catch (IOException e){
+            System.out.println("An error occurred.");
+        }
+        System.out.println("You have saved your progress 👏🏾.");
+    }
+
+    public void loadGame(MoveStrategy computerStrategy) {
+        // You can check if the strategy in the file is the same in the one in the game and if its not, return the error that strategy is not the same as that in file
+        // To check strategy, you can use the first letter such as H for humanStrategy, Y for Your strategy, R for Random Strategy
         System.out.println("Code not yet implemented\n");
     }
 
-    public void loadGame() {
-        System.out.println("Code not yet implemented \n");
-    }
+
 
     public void undoLastMove(ArrayList<Integer> moves) {
         // I first give a condition to ensure there is something still in the array
-        System.out.println("Code not yet implemented \n");
+        if(moves.size() < 2){
+            System.out.println("There are no moves to revert to!!! 👀");
+        } else {
+            int array_size = moves.size();
+            int last_move = moves.get(array_size - 1);
+            moves.remove(array_size - 1); // Here the list updates and the second to last element becomes the last in the array
+            array_size -= 1; // Update the array size when an element is removed
+            int second_to_last_move = moves.get(array_size - 1);
+            moves.remove(array_size - 1);
+            int total_marbles_restored = last_move + second_to_last_move;
+            marbleSize += total_marbles_restored;
+            System.out.println(total_marbles_restored + " have been restored to the pile");
+            System.out.print("This is the current value of the moves list " + moves + "\n");
+        }
+//        System.out.println("Code not yet implemented \n");
     }
 
     public void resetGame() {

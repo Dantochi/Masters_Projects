@@ -2,4 +2,6 @@
 comment0.target=YourStrategy
 comment1.params=
 comment1.target=int\ NextMove()
-numComments=2
+comment2.params=marbles
+comment2.target=int\ NextMove(int)
+numComments=3

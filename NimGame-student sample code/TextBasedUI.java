@@ -1,6 +1,3 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,22 +6,13 @@ public class TextBasedUI {
     private NimGame game;
     private Scanner reader;
     private ArrayList<Integer> moveList;
+    private Player player1;
+    private Player player2;
+    private NimGameGUI gui;
 
     public TextBasedUI() {
         reader = new Scanner(System.in); // This creates a Scanner class to take in user choice of computer's strategy or gameMode and the options of reset, save, make move, undo etc.
         moveList = new ArrayList<>();
-        File gameFile = new File("GameHistory.txt");
-        try { // I added this bit
-            if (gameFile.createNewFile()) {
-                System.out.println("Game File created: " + gameFile.getName());
-            } else {
-                System.out.println("Game File History already exists.");
-            }
-        } catch (IOException e){
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        
         System.out.println("The Game of 1-2 Nim Assessment!");
         System.out.println("------------------------------");
         System.out.println("Choose a computer strategy:");
@@ -47,8 +35,8 @@ public class TextBasedUI {
             return;
         }
 
-        Player player1 = new Player("Human", new HumanUserStrategy()); // Takes in the Human Strategy and Name of the human
-        Player player2 = new Player("Computer", computerStrategy); // Takes in the computer strategy specified at the start of the game and the name of the computer
+        player1 = new Player("Human", new HumanUserStrategy()); // Takes in the Human Strategy and Name of the human
+        player2 = new Player("Computer", computerStrategy); // Takes in the computer strategy specified at the start of the game and the name of the computer
 
         this.game = new NimGame(player1, player2); // Takes in the two players that have been created, this bit helps to assign move, check for winner, randomize marble size, check for whose turn it turn, save, undo, reset etc.
         startGame();
@@ -80,10 +68,10 @@ public class TextBasedUI {
                 makeMove();
                 break;
             case "S":
-                game.saveGame();
+                game.saveGame(game.getMarbleSize(), game.isHumanTurn(), player1.getStrategy(), player2.getStrategy());
                 break;
             case "L":
-                game.loadGame();
+                game.loadGame(player2.getStrategy());
                 displayMarbles();
                 break;
             case "U":
@@ -136,44 +124,10 @@ public class TextBasedUI {
         }
         game.assignMove(move); // when this runs the game.isHumanTurn() is assigned the opposite of its current boolean value, in this case, its value changes from true to false and it subtracts the value of move made by the computer or user from the pile of marbles;
         moveList.add(move);
-        registerMove(move);
         System.out.println("This is the list that contains the value of moves that have been made " + moveList);
         //storeMove(move, player); // This is used to store the move that has been made by a player by writing to a file;
         System.out.println(player.getName() + " takes " + move + " marbles.");
         displayMarbles();
-    }
-
-    private void storeMove(int move, Player player){
-        //This is what I am trying to implement
-        //That I store the moves of both human and computer
-        //Then when the array is of size = 2 (containing the file move and computer move)
-        //pass the array into the registerMove method
-        //Then reset the array
-        ArrayList<Integer> moveList = new ArrayList<>();
-        moveList.add(move);
-        System.out.println(moveList);
-        System.out.println(move + " was made by "+ player.getName());
-//        if(moveList.size() == 2){
-//            System.out.println(moveList.size());
-//            registerMove(moveList);
-//            moveList.clear();
-//        }
-    }
-    private void registerMove(int move){
-        // This should accept an array as an argument
-        // Loop through the array
-        // Store the moves of one game turn in this format for easy recovery:
-        // {humanMove, ComputerMove}
-        try{
-            FileWriter gameWriter = new FileWriter("GameHistory.txt", true);
-            //for (int move : moveList){
-            gameWriter.write(move + ", ");
-            //}
-            gameWriter.close();
-        } catch (IOException e){
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
     }
     
     private void displayMarbles() {
@@ -199,6 +153,7 @@ public class TextBasedUI {
 
 
     public static void main(String[] args) {
-        TextBasedUI textUi = new TextBasedUI(); // This runs the game
+//        TextBasedUI textUi = new TextBasedUI(); // This runs the game
+        NimGameGUI mainGUI = new NimGameGUI();
     }
 }

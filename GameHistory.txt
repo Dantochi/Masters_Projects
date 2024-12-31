@@ -1,1 +1,15 @@
-1, 2, 2, 2, 1, 1, 1, 1, 2, 0, 2, 1, 2, 2, 2, 1, 2, 1, 1, 2, 2, 
+Marble Size: 6
+Human Turn: true
+Human Strategy: HumanUserStrategy@31221be2
+Computer Strategy: RandomStrategy@377dca04
+
+Marble Size: 3
+Human Turn: true
+Human Strategy: HumanUserStrategy@31221be2
+Computer Strategy: RandomStrategy@377dca04
+
+Marble Size: 9
+Human Turn: true
+Human Strategy: HumanUserStrategy@31221be2
+Computer Strategy: YourStrategy@377dca04
+
